@@ -61,3 +61,31 @@ int main()
 	return 0;
 }
 
+Problem 3
+
+Given a List of N number a1,a2,a3........an, You have to find smallest number from the List that is repeated in the List exactly K number of times.
+
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+int main()
+{
+	int n,k;
+	cin>>n;
+	int *a = new int[n];
+	for(int i=0;i<n;i++)
+        cin>>a[i];
+	cin>>k;
+	int *b = new int[100001];
+	for(int i=0;i<n;i++)
+		b[a[i]]++;
+	
+	for(int i=0;i<100001;i++)
+   	{
+		if(b[i]==k)
+		{
+			cout<<i;
+			break;
+		}
+	}
+}
